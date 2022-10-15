@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>00Go学习准备 | Alan的博客</title>
+    <meta property="og:title" content="00Go学习准备 - Alan的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-11-21T21:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-11-21T21:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="go,java,Alan,PHP,博客,项目管理,软件架构,公众号,小程序">
+    <meta name="description" content="00Go学习准备">
+        
+    <meta name="author" content="Alan">
+    <meta property="og:url" content="https://fullegg233.github.io/post/00go%E5%AD%A6%E4%B9%A0%E5%87%86%E5%A4%87/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fullegg233.github.io/">
+                        Alan的博客
+                    </a>
+                
+                <p class="description">专注于Web领域、移动互联网、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fullegg233.github.io/">首页</a>
+                    
+                    <a  href="https://fullegg233.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fullegg233.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0为什么你应该学习go语言">0、为什么你应该学习Go语言</a>
+      <ul>
+        <li><a href="#01什么是go语言">0.1、什么是Go语言</a></li>
+        <li><a href="#02go语言的特点">0.2、Go语言的特点</a></li>
+        <li><a href="#03为什么应该学习go语言">0.3、为什么应该学习Go语言</a></li>
+      </ul>
+    </li>
+    <li><a href="#1从零开始搭建go语言开发环境">1、从零开始搭建Go语言开发环境</a>
+      <ul>
+        <li><a href="#11下载">1.1、下载</a>
+          <ul>
+            <li><a href="#下载地址">下载地址</a></li>
+          </ul>
+        </li>
+        <li><a href="#12安装">1.2、安装</a></li>
+        <li><a href="#13goroot和gopathgoproxy">1.3、GOROOT和GOPATH、GOPROXY</a></li>
+        <li><a href="#14go开发编辑器">1.4、Go开发编辑器</a></li>
+        <li><a href="#15第一个go程序">1.5、第一个Go程序</a></li>
+        <li><a href="#16编译">1.6、编译</a></li>
+        <li><a href="#17跨平台编译">1.7、跨平台编译</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">00Go学习准备</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年11月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category">
+                <a href='/categories/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0' target="_blank">Go学习笔记</a>
+            </span>
+            
+        </div>
+        
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h1 id="0为什么你应该学习go语言">0、为什么你应该学习Go语言</h1>
+<h2 id="01什么是go语言">0.1、什么是Go语言</h2>
+<ul>
+<li>Google开源</li>
+<li>编译型语言</li>
+<li>21世界的C语言</li>
+</ul>
+<h2 id="02go语言的特点">0.2、Go语言的特点</h2>
+<ul>
+<li>简单易学习</li>
+<li>开发效率高</li>
+<li>执行性能好</li>
+</ul>
+<h2 id="03为什么应该学习go语言">0.3、为什么应该学习Go语言</h2>
+<ul>
+<li>机会多</li>
+<li>薪资高</li>
+<li>发展好</li>
+</ul>
+<h1 id="1从零开始搭建go语言开发环境">1、从零开始搭建Go语言开发环境</h1>
+<h2 id="11下载">1.1、下载</h2>
+<h3 id="下载地址">下载地址</h3>
+<p>Go官网下载地址：https://golang.org/dl/</p>
+<p>Go官网镜像站（推荐）：https://golang.google.cn/dl/</p>
+<h2 id="12安装">1.2、安装</h2>
+<p>参照官方网站</p>
+<p>输入<code>go version</code>，验证安装成功</p>
+<h2 id="13goroot和gopathgoproxy">1.3、GOROOT和GOPATH、GOPROXY</h2>
+<p>环境变量配置<code>GOPATH</code>，在此目录下新建三个文件夹<code>bin src pkg</code>；PATH环境变量追加 <code>E:\go\bin</code></p>
+<p>查看Go配置 <code>go env</code>，配置国内镜像<code>go env -w GOPROXY=https://goproxy.cn,direct</code></p>
+<h2 id="14go开发编辑器">1.4、Go开发编辑器</h2>
+<p><code>VS Code</code>是微软开源的编辑器，而<code>Goland</code>是jetbrains出品的付费IDE。</p>
+<p><code>VS Code</code>官方下载地址：https://code.visualstudio.com/Download</p>
+<p>插件安装：Chinese包、Go扩展</p>
+<h2 id="15第一个go程序">1.5、第一个Go程序</h2>
+<p>使用go module模式新建项目时，我们需要通过<code>go mod init 项目名</code>命令对项目进行初始化，该命令会在项目根目录下生成<code>go.mod</code>文件。</p>
+<p><code>go mod tidy</code>命令更新<code>go.mod</code>中的依赖关系</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff79c6">package</span> main  <span style="color:#6272a4">// 声明 main 包，表明当前是一个可执行程序
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> <span style="color:#f1fa8c">&#34;fmt&#34;</span>  <span style="color:#6272a4">// 导入内置 fmt 包
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>(){  <span style="color:#6272a4">// main函数，是程序执行的入口
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;Hello World!&#34;</span>)  <span style="color:#6272a4">// 在终端打印 Hello World!
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="16编译">1.6、编译</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4">#在hello目录下执行：</span>
+</span></span><span style="display:flex;"><span>go build
+</span></span><span style="display:flex;"><span>go build hello
+</span></span><span style="display:flex;"><span>go build -o heiheihei.exe
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#该命令本质上也是先编译再执行，但没有保存编译文件</span>
+</span></span><span style="display:flex;"><span>go run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#它先编译源代码得到可执行文件，然后将可执行文件移动到GOPATH的bin目录下，就在任意地方直接执行可执行文件了</span>
+</span></span><span style="display:flex;"><span>go install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="17跨平台编译">1.7、跨平台编译</h2>
+<h4 id="windows编译mac可执行文件">Windows编译Mac可执行文件</h4>
+<p>Windows下编译Mac平台64位可执行程序：</p>
+<p>cmd终端下执行：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SET <span style="color:#8be9fd;font-style:italic">CGO_ENABLED</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>SET <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>darwin
+</span></span><span style="display:flex;"><span>SET <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span>amd64
+</span></span><span style="display:flex;"><span>go build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>PowerShell终端下执行：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ENV</span>:CGO_ENABLED<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ENV</span>:GOOS<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;darwin&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ENV</span>:GOARCH<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;amd64&#34;</span>
+</span></span><span style="display:flex;"><span>go build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="mac编译linux可执行文件">Mac编译Linux可执行文件</h4>
+<p>Mac电脑编译得到Linux平台64位可执行程序：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">CGO_ENABLED</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span> <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>linux <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span>amd64 go build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="mac编译windows可执行文件">Mac编译Windows可执行文件</h4>
+<p>Mac电脑编译得到Windows平台64位可执行程序：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">CGO_ENABLED</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span> <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>windows <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span>amd64 go build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="linux编译mac可执行文件">Linux编译Mac可执行文件</h4>
+<p>Linux平台下编译Mac平台64位可执行程序：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">CGO_ENABLED</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span> <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>darwin <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span>amd64 go build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="linux编译windows可执行文件">Linux编译Windows可执行文件</h4>
+<p>Linux平台下编译Windows平台64位可执行程序：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">CGO_ENABLED</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span> <span style="color:#8be9fd;font-style:italic">GOOS</span><span style="color:#ff79c6">=</span>windows <span style="color:#8be9fd;font-style:italic">GOARCH</span><span style="color:#ff79c6">=</span>amd64 go build
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/golang' target="_blank">golang</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://fullegg233.github.io/">Alan的博客 By Alan</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fullegg233.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/16%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="16单元测试" target="_blank">16单元测试</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="15网络编程" target="_blank">15网络编程</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/14%E5%B9%B6%E5%8F%91/" title="14并发" target="_blank">14并发</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/13%E5%8F%8D%E5%B0%84/" title="13反射" target="_blank">13反射</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/12%E6%8E%A5%E5%8F%A3/" title="12接口" target="_blank">12接口</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/11%E5%8C%85package/" title="11包（package）" target="_blank">11包（package）</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/10%E7%BB%93%E6%9E%84%E4%BD%93/" title="10结构体" target="_blank">10结构体</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/09%E6%8C%87%E9%92%88/" title="09指针" target="_blank">09指针</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/08%E5%87%BD%E6%95%B0/" title="08函数" target="_blank">08函数</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/07map/" title="07map" target="_blank">07map</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fullegg233.github.io/categories/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Go学习笔记 (17)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fullegg233.github.io/tags/golang/">golang</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://studygolang.com/pkgdoc" title="Golang标准库文档">Golang标准库文档</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://coolshell.cn/" title="酷 壳 – COOLSHELL">酷 壳 – COOLSHELL</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fullegg233.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

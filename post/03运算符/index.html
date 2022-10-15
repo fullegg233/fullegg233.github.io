@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>03运算符 | Alan的博客</title>
+    <meta property="og:title" content="03运算符 - Alan的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-11-21T21:30:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-11-21T21:30:00&#43;08:00'>
+        
+    <meta name="Keywords" content="go,java,Alan,PHP,博客,项目管理,软件架构,公众号,小程序">
+    <meta name="description" content="03运算符">
+        
+    <meta name="author" content="Alan">
+    <meta property="og:url" content="https://fullegg233.github.io/post/03%E8%BF%90%E7%AE%97%E7%AC%A6/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fullegg233.github.io/">
+                        Alan的博客
+                    </a>
+                
+                <p class="description">专注于Web领域、移动互联网、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fullegg233.github.io/">首页</a>
+                    
+                    <a  href="https://fullegg233.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fullegg233.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1算术运算符">1、算术运算符</a></li>
+    <li><a href="#2关系运算符">2、关系运算符</a></li>
+    <li><a href="#3逻辑运算符">3、逻辑运算符</a></li>
+    <li><a href="#4位运算符">4、位运算符</a></li>
+    <li><a href="#5赋值运算符">5、赋值运算符</a></li>
+    <li><a href="#6练习题">6、练习题</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">03运算符</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年11月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category">
+                <a href='/categories/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0' target="_blank">Go学习笔记</a>
+            </span>
+            
+        </div>
+        
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h1 id="1算术运算符">1、算术运算符</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">相加</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">相减</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">相乘</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">相除</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">求余</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong> <code>++</code>（自增）和<code>--</code>（自减）在Go语言中是单独的语句，并不是运算符。</p>
+<h1 id="2关系运算符">2、关系运算符</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">检查两个值是否相等，如果相等返回 True 否则返回 False。</td>
+</tr>
+<tr>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">检查两个值是否不相等，如果不相等返回 True 否则返回 False。</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">检查左边值是否大于右边值，如果是返回 True 否则返回 False。</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:center">检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">检查左边值是否小于右边值，如果是返回 True 否则返回 False。</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3逻辑运算符">3、逻辑运算符</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">逻辑 AND 运算符。 如果两边的操作数都是 True，则为 True，否则为 False。</td>
+</tr>
+<tr>
+<td style="text-align:center">||</td>
+<td style="text-align:center">逻辑 OR 运算符。 如果两边的操作数有一个 True，则为 True，否则为 False。</td>
+</tr>
+<tr>
+<td style="text-align:center">!</td>
+<td style="text-align:center">逻辑 NOT 运算符。 如果条件为 True，则为 False，否则为 True。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="4位运算符">4、位运算符</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">参与运算的两数各对应的二进位相与。 （两位均为1才为1）</td>
+</tr>
+<tr>
+<td style="text-align:center">|</td>
+<td style="text-align:center">参与运算的两数各对应的二进位相或。 （两位有一个为1就为1）</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">参与运算的两数各对应的二进位相异或，当两对应的二进位相异时，结果为1。 （两位不一样则为1）</td>
+</tr>
+<tr>
+<td style="text-align:center">&laquo;</td>
+<td style="text-align:center">左移n位就是乘以2的n次方。 “a&laquo;b”是把a的各二进位全部左移b位，高位丢弃，低位补0。</td>
+</tr>
+<tr>
+<td style="text-align:center">&raquo;</td>
+<td style="text-align:center">右移n位就是除以2的n次方。 “a&raquo;b”是把a的各二进位全部右移b位。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="5赋值运算符">5、赋值运算符</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">简单的赋值运算符，将一个表达式的值赋给一个左值</td>
+</tr>
+<tr>
+<td style="text-align:center">+=</td>
+<td style="text-align:center">相加后再赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">-=</td>
+<td style="text-align:center">相减后再赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">*=</td>
+<td style="text-align:center">相乘后再赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">/=</td>
+<td style="text-align:center">相除后再赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">%=</td>
+<td style="text-align:center">求余后再赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">&laquo;=</td>
+<td style="text-align:center">左移后赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">&raquo;=</td>
+<td style="text-align:center">右移后赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;=</td>
+<td style="text-align:center">按位与后赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">|=</td>
+<td style="text-align:center">按位或后赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">^=</td>
+<td style="text-align:center">按位异或后赋值</td>
+</tr>
+</tbody>
+</table>
+<h1 id="6练习题">6、练习题</h1>
+<p>有一堆数字，如果除了一个数字以外，其他数字都出现了两次，那么如何找到出现一次的数字？</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/02%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">02数据类型</a></li>
+        
+        <li><a href="/post/01%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/">01变量与常量</a></li>
+        
+        <li><a href="/post/00go%E5%AD%A6%E4%B9%A0%E5%87%86%E5%A4%87/">00Go学习准备</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/golang' target="_blank">golang</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://fullegg233.github.io/">Alan的博客 By Alan</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fullegg233.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/16%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="16单元测试" target="_blank">16单元测试</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/15%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="15网络编程" target="_blank">15网络编程</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/14%E5%B9%B6%E5%8F%91/" title="14并发" target="_blank">14并发</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/13%E5%8F%8D%E5%B0%84/" title="13反射" target="_blank">13反射</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/12%E6%8E%A5%E5%8F%A3/" title="12接口" target="_blank">12接口</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/11%E5%8C%85package/" title="11包（package）" target="_blank">11包（package）</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/10%E7%BB%93%E6%9E%84%E4%BD%93/" title="10结构体" target="_blank">10结构体</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/09%E6%8C%87%E9%92%88/" title="09指针" target="_blank">09指针</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/08%E5%87%BD%E6%95%B0/" title="08函数" target="_blank">08函数</a>
+    </li>
+    
+    <li>
+        <a href="https://fullegg233.github.io/post/07map/" title="07map" target="_blank">07map</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fullegg233.github.io/categories/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Go学习笔记 (17)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fullegg233.github.io/tags/golang/">golang</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://studygolang.com/pkgdoc" title="Golang标准库文档">Golang标准库文档</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://coolshell.cn/" title="酷 壳 – COOLSHELL">酷 壳 – COOLSHELL</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fullegg233.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
